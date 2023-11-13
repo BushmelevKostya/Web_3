@@ -1,7 +1,11 @@
 package app.web.model
 
+import app.web.database.PointEntity
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
+import jakarta.persistence.EntityManager
+import jakarta.persistence.PersistenceContext
+import jakarta.transaction.Transactional
 import java.io.Serializable
 
 @Named("pointBean")
@@ -11,7 +15,8 @@ class Point : Serializable {
     private var listOfX = ArrayList<Int>()
     private var y : String = ""
     private var r : Int = 1
-
+    @PersistenceContext(unitName = "PointData")
+    private lateinit var entityManager: EntityManager
     init {
         listOfX.add(-4)
         listOfX.add(-3)
@@ -51,9 +56,17 @@ class Point : Serializable {
     fun printR() {
         println("R: $r")
     }
+
+    @Transactional
+    fun saveEntity(x: Int, y: Float, r: Int) {
+        val entity = PointEntity(x, y, r)
+        entityManager.persist(entity)
+    }
+    fun findEntityById(entityId : Long) : PointEntity? {
+        return entityManager.find(PointEntity::class.java, entityId)
+    }
+
     fun submit() {
-        println("Selected x: $x")
-        println("Selected y: $y")
-        println("Selected R: $r")
+        saveEntity(x, y.toFloat(), r)
     }
 }
