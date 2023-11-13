@@ -17,14 +17,23 @@
 <h:body>
     <h:form>
         <h:outputLabel value="Select X:"/>
-        <h:selectOneMenu value="#{xBean.x}">
+        <h:selectOneMenu value="#{pointBean.x}">
             <f:selectItem itemLabel="Select One" itemValue=""/>
-            <f:selectItems value="#{xBean.listOfX}"/>
+            <f:selectItems value="#{pointBean.listOfX}"/>
         </h:selectOneMenu>
 
         <h:outputLabel value="Select Y:"/>
-        <h:inputText value=""/>
+        <h:inputText value="#{pointBean.y}"/>
+
+        <h:commandLink action="#{pointBean.printR}" value="#{pointBean.r}"/>
+
+        <h:commandButton value="Submit">
+            <f:ajax execute="ajaxForm" render="outputTable"/>
+        </h:commandButton>
     </h:form>
+
+    <div id="outputTable"></div>
+
     <h:form>
         <h:outputLink value="index.xhtml">Start Page</h:outputLink>
     </h:form>
