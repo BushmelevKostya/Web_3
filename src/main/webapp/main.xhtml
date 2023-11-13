@@ -25,10 +25,12 @@
         <h:outputLabel value="Select Y:"/>
         <h:inputText value="#{pointBean.y}"/>
 
-        <h:commandLink action="#{pointBean.printR}" value="#{pointBean.r}"/>
+        <h:commandLink action="#{pointBean.printR}">
+            <h:outputText value="1"></h:outputText>
+        </h:commandLink>
 
-        <h:commandButton value="Submit">
-            <f:ajax execute="ajaxForm" render="outputTable"/>
+        <h:commandButton value="Submit" action="#{pointBean.submit()}">
+            <f:ajax execute="@form"/>
         </h:commandButton>
     </h:form>
 

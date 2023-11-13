@@ -3,14 +3,15 @@ package app.web
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 import java.io.Serializable
+import java.util.Arrays
 
 @Named("pointBean")
 @ApplicationScoped
 class Point : Serializable {
-    val x : Int = 0
-    var listOfX = ArrayList<Int>()
-    val y : String = ""
-    val r : Int = 1
+    private var x : Int = 0
+    private var listOfX = ArrayList<Int>()
+    private var y : String = ""
+    private var r : Int = 1
 
     init {
         listOfX.add(-4)
@@ -24,10 +25,36 @@ class Point : Serializable {
         listOfX.add(4)
     }
 
+    fun getX() : Int {
+        return x;
+    }
+    fun setX(x : Int) {
+        this.x = x
+    }
+    fun getY() : String {
+        return y
+    }
+    fun setY(y : String) {
+        this.y = y
+    }
+    fun getR() : Int {
+        return r
+    }
+    fun setR(r : Int) {
+        this.r = r
+    }
+    fun getListOfX() : ArrayList<Int> {
+        return listOfX
+    }
+    fun setListOfX(value : ArrayList<Int>) {
+        this.listOfX = value
+    }
     fun printR() {
         println("R: $r")
     }
     fun submit() {
-        println("Selected Fruit: $x")
+        println("Selected x: $x")
+        println("Selected y: $y")
+        println("Selected R: $r")
     }
 }
