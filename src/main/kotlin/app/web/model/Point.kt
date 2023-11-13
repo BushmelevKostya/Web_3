@@ -1,9 +1,8 @@
-package app.web
+package app.web.model
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 import java.io.Serializable
-import java.util.Arrays
 
 @Named("pointBean")
 @ApplicationScoped
