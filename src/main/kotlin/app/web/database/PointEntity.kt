@@ -1,15 +1,18 @@
 package app.web.database
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
+@Table(name = "points")
 @Entity
-class PointEntity(val x: Int, val y: Float,val r: Int) {
-    constructor() : this(0, 0.0f, 0) {
-    }
+class PointEntity() {
+    @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
+    @get:Column(name = "x")
+    var x: Int = 0
+    @get:Column(name = "y")
+    var y: Float = 0.0f
+    @get:Column(name = "r")
+    var r: Int = 0
 }
