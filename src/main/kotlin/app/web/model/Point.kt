@@ -2,6 +2,7 @@ package app.web.model
 
 import app.web.service.PointService
 import jakarta.enterprise.context.ApplicationScoped
+import jakarta.faces.view.ViewScoped
 import jakarta.inject.Named
 import java.io.Serializable
 
@@ -54,7 +55,7 @@ class Point : Serializable {
     }
 
     fun submit() {
-        ps.saveEntity(x, y.toFloat(), r)
-        ps.print()
+        println(1)
+//        ps.saveEntity(x, y.toFloat(), r)
     }
 }
