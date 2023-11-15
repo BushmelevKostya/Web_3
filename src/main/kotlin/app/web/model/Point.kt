@@ -2,18 +2,17 @@ package app.web.model
 
 import app.web.service.PointService
 import jakarta.enterprise.context.ApplicationScoped
-import jakarta.faces.view.ViewScoped
 import jakarta.inject.Named
 import java.io.Serializable
+import java.lang.Exception
 
 @Named("pointBean")
 @ApplicationScoped
 class Point : Serializable {
     private var x : Int = 0
     private var listOfX = ArrayList<Int>()
-    private var y : String = ""
+    private var y : Float = 0.0f
     private var r : Int = 1
-    private val ps = PointService()
     init {
         listOfX.add(-4)
         listOfX.add(-3)
@@ -32,11 +31,11 @@ class Point : Serializable {
     fun setX(x : Int) {
         this.x = x
     }
-    fun getY() : String {
+    fun getY() : Float {
         return y
     }
     fun setY(y : String) {
-        this.y = y
+        this.y = y.toFloat()
     }
     fun getR() : Int {
         return r
@@ -56,6 +55,11 @@ class Point : Serializable {
 
     fun submit() {
         println(1)
-//        ps.saveEntity(x, y.toFloat(), r)
+        try {
+            val ps = PointService()
+            ps.saveEntity(x, y, r)
+        } catch (exception : Exception) {
+            println(exception.message)
+        }
     }
 }

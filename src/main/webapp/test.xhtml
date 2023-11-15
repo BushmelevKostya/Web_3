@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<!--      xmlns:p="http://primefaces.org/ui">-->
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:body>
     <h:form>
-        <h:commandButton action="#{pointBean.submit}" value="Tyk-Tyk"/>
-        <h:commandButton value="Trytrytry" type="submit" action="#{pointBean.submit}">
-        </h:commandButton>
+        <h:commandButton action="#{pointBean.submit()}" value="Tyk-Tyk"></h:commandButton>
     </h:form>
 </h:body>
 </html>

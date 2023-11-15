@@ -40,9 +40,9 @@ dependencies {
     // javaee
     implementation('jakarta.platform:jakarta.jakartaee-web-api:8.0.0')
     // jsf
-    implementation('jakarta.faces:jakarta.faces-api:3.0.0')
+    implementation('jakarta.faces:jakarta.faces-api:4.0.1')
     implementation('org.glassfish:jakarta.faces:4.0.1')
-//    implementation('org.primefaces:primefaces:11.0.0')
+//    implementation('org.primefaces:primefaces:13.0.0')
     // beans
     implementation('jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0')
     //database
