@@ -20,10 +20,6 @@ class PointService {
         entityManager.close()
     }
 
-    fun print() {
-        println(findEntityById(1))
-    }
-
     fun findEntityById(entityId: Long): PointEntity? {
         val entityManager = hibernate.getEntityManager()
         return entityManager.find(PointEntity::class.java, entityId)
