@@ -2,11 +2,11 @@ package app.web.service
 
 import app.web.database.HibernateUtil
 import app.web.database.PointEntity
-import jakarta.transaction.Transactional
 
 class PointService {
+    private val hibernate = HibernateUtil()
     fun saveEntity(x: Int, y: Float, r: Int) {
-        val entityManager = HibernateUtil.entityManager
+        val entityManager = hibernate.getEntityManager()
         val entity = PointEntity()
         entity.x = x
         entity.y = y
@@ -25,7 +25,7 @@ class PointService {
     }
 
     fun findEntityById(entityId: Long): PointEntity? {
-        val entityManager = HibernateUtil.entityManager
+        val entityManager = hibernate.getEntityManager()
         return entityManager.find(PointEntity::class.java, entityId)
     }
 }

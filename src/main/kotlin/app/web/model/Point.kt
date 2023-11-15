@@ -1,14 +1,8 @@
 package app.web.model
 
-import app.web.database.PointEntity
 import app.web.service.PointService
-import jakarta.annotation.PostConstruct
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
-import jakarta.persistence.EntityManager
-import jakarta.persistence.Persistence
-import jakarta.persistence.PersistenceContext
-import jakarta.transaction.Transactional
 import java.io.Serializable
 
 @Named("pointBean")

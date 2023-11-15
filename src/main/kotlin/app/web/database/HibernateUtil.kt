@@ -4,21 +4,11 @@ import jakarta.persistence.EntityManager
 import jakarta.persistence.EntityManagerFactory
 import jakarta.persistence.Persistence
 
-object HibernateUtil {
-    private const val PERSISTENCE_UNIT_NAME = "PointData"
-    private var entityManagerFactory: EntityManagerFactory
-
-    init {
-        try {
-            entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME)
-        } catch (ex: Throwable) {
-            System.err.println("Initial EntityManagerFactory creation failed.$ex")
-            throw ExceptionInInitializerError(ex)
-        }
+class HibernateUtil() {
+    private var entityManagerFactory : EntityManagerFactory = Persistence.createEntityManagerFactory("PointData")
+    fun getEntityManager() : EntityManager {
+        return entityManagerFactory.createEntityManager()
     }
-
-    val entityManager: EntityManager
-        get() = entityManagerFactory.createEntityManager()
 
     fun closeEntityManagerFactory() {
         if (entityManagerFactory.isOpen) {

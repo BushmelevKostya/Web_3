@@ -4,7 +4,7 @@ import jakarta.persistence.*
 
 @Table(name = "points")
 @Entity
-class PointEntity() {
+class PointEntity {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
