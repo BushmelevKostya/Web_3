@@ -62,4 +62,7 @@ class Point : Serializable {
             println(exception.message)
         }
     }
+    fun print() : Int{
+        return x
+    }
 }

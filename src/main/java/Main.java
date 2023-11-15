@@ -8,6 +8,7 @@ import jakarta.persistence.EntityTransaction;
 public class Main {
 	public static void main(String[] args) {
 		try {
+			//работает
 			Point point = new Point();
 			point.submit();
 		} catch (Exception exception) {

@@ -42,7 +42,6 @@ dependencies {
     // jsf
     implementation('jakarta.faces:jakarta.faces-api:4.0.1')
     implementation('org.glassfish:jakarta.faces:4.0.1')
-//    implementation('org.primefaces:primefaces:13.0.0')
     // beans
     implementation('jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0')
     //database
