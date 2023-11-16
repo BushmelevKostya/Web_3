@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: distroy;
-  src: url("../fonts/distroy.23.ttf");
+  src: url("../../fonts/distroy.23.ttf");
 }
 
 @font-face {
   font-family: rurintania;
-  src: url("../fonts/rurintania.ttf");
+  src: url("../../fonts/rurintania.ttf");
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   font-size: 15px;
   letter-spacing: 1px;
   text-indent: 30px;
-  background-image: url("../img/fon_girl.png");
+  background-image: url("../../img/fon_girl.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -233,7 +233,7 @@ h1 + p {
   height: 15px;
   border-radius: 100%;
   cursor: pointer;
-  background-image: url("../img/radio-1.png");
+  background-image: url("../../img/radio-1.png");
   background-size: cover;
 }
 /*Псевдоклассы*/
@@ -247,7 +247,7 @@ h1 + p {
 }
 
 .radio-button:checked + .custom-radio {
-  background-image: url("../img/radio-2.png");
+  background-image: url("../../img/radio-2.png");
   background-size: cover;
 }
 /*Селектор потомков*/

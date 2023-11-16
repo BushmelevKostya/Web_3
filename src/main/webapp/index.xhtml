@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<head>
+<h:head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>JSF Application</title>
-    <link href="styles/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="resources/styles/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="ico/favicon.ico" rel="icon">
-</head>
+    <link rel="icon" href="resources/ico/favicon.ico"/>
+</h:head>
 
-<body>
+<h:body>
 <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
 <div class="time-block">
     <div class="clock-box">
@@ -95,10 +95,12 @@
         <div class="day"></div>
     </div>
     <div class="link-to-main">
-        <a href="index.html">Go to main page</a>
+        <h:form>
+            <h:outputLink value="main.xhtml">Go to main page</h:outputLink>
+        </h:form>
     </div>
 </div>
 
-<script src="script/clock.js"></script>
-</body>
+<h:outputScript name="script/clock.js"/>
+</h:body>
 </html>

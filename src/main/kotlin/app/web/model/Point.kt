@@ -54,10 +54,13 @@ class Point : Serializable {
     }
 
     fun submit() {
-        println(1)
+//        println(1)
         try {
-            val ps = PointService()
-            ps.saveEntity(x, y, r)
+            println(x)
+            println(y)
+            println(r)
+//            val ps = PointService()
+//            ps.saveEntity(x, y, r)
         } catch (exception : Exception) {
             println(exception.message)
         }
