@@ -87,5 +87,5 @@ function drawCanvas(R) {
     context.lineTo(500, 250);
     context.stroke();
 
-    drawDots();
+    // drawDots();
 }

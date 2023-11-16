@@ -6,7 +6,7 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>JSF Application</title>
-    <link rel="stylesheet" href="resources/styles/style.css" />
+    <link rel="stylesheet" href="resources/styles/style.css"/>
     <link rel="icon" href="resources/ico/favicon.ico"/>
 </h:head>
 
@@ -32,11 +32,46 @@
     </h:form>
 
     <div id="outputTable">
-        
+
     </div>
 
     <h:form>
         <h:button value="Go to start page" outcome="go-index"/>
     </h:form>
+
+    <div class="view">
+        <div class="canvas">
+            <canvas id="shedule" class="shedule" width="500" height="500"></canvas>
+        </div>
+
+        <div class="data-table" id="main-data-table">
+            <table border="1" class="data-table" id="data-table">
+                <caption class="gradient-red">Таблица результатов запроса</caption>
+                <tr>
+                    <th class="gradient-black">id</th>
+                    <th class="gradient-black">x</th>
+                    <th class="gradient-black">y</th>
+                    <th class="gradient-black">R</th>
+                    <th class="gradient-black">Попадание</th>
+                </tr>
+                <tbody id="data-body" class="data-body">
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th class="green-response">
+                    </th>
+                    <th class="red-response">
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </h:body>
 </html>
