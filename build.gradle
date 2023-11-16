@@ -28,10 +28,6 @@ tasks.withType(JavaCompile) {
     }
 }
 
-//configurations {
-//    all*.exclude group: 'org.jboss', module: 'jandex'
-//}
-
 dependencies {
     // servlets
     implementation('jakarta.servlet:jakarta.servlet-api:6.0.0')
