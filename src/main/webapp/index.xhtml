@@ -2,91 +2,103 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<h:head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>JSF Application</title>
-    <link rel="stylesheet" href="styles/style.css"/>
-<!--    <link rel="icon" href="ico/favicon.ico">-->
-    <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
-</h:head>
+    <link href="styles/style.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="ico/favicon.ico" rel="icon">
+</head>
 
-<h:body>
-    <div class="clock">
-        <ul class="humbers hours hour-first">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
-        <ul class="numbers hours hour-second">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
-        <ul class="numbers minutes minute-first">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
-        <ul class="numbers minutes minute-second">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
-        <ul class="numbers seconds second-first">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
-        <ul class="numbers seconds second-second">
-            <li><span>0</span></li>
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-        </ul>
+<body>
+<div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
+<div class="time-block">
+    <div class="clock-box">
+        <div class="clock">
+            <ul class="numbers hours hour-first">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+            <ul class="numbers hours hour-second">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+            <ul class="numbers minutes minute-first">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+            <ul class="numbers minutes minute-second">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+            <ul class="numbers seconds second-first">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+            <ul class="numbers seconds second-second">
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+            </ul>
+        </div>
     </div>
-    <h:form>
-        <h:outputLink value="main.xhtml">Main Page</h:outputLink>
-    </h:form>
-</h:body>
+    <div class="date-box">
+        <div class="year"></div>
+        <div class="month"></div>
+        <div class="day"></div>
+    </div>
+    <div class="link-to-main">
+        <a href="index.html">Go to main page</a>
+    </div>
+</div>
+
+<script src="script/clock.js"></script>
+</body>
 </html>
