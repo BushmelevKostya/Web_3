@@ -8,7 +8,7 @@ import jakarta.persistence.EntityTransaction;
 public class Main {
 	public static void main(String[] args) {
 		try {
-			PointAdapter point = new PointAdapter();
+			Point point = new Point();
 			point.submit();
 		} catch (Exception exception) {
 			System.out.println(exception.getMessage());
