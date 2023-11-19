@@ -1,5 +1,6 @@
 package app.web.model
 
+import app.web.database.PointEntity
 import app.web.service.PointService
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
@@ -53,19 +54,18 @@ class Point : Serializable {
         println("R: $r")
     }
 
-    fun submit() {
-        println(1)
-        try {
-//            println(x)
-//            println(y)
-//            println(r)
+    fun submit() : ArrayList<PointEntity>{
+        return try {
             val ps = PointService()
             ps.saveEntity(x, y, r)
+            ps.getPoints()
         } catch (exception : Exception) {
             println(exception.message)
+            ArrayList<PointEntity>()
         }
     }
-    fun print() : Int{
-        return x
+    fun getPoints() : ArrayList<PointEntity> {
+        val ps = PointService()
+        return ps.getPoints()
     }
 }

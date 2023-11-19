@@ -1,4 +1,5 @@
-function drawDots() {
+function drawDots()
+{
     $.ajax({
         type: "GET",
         url: "getDotData",

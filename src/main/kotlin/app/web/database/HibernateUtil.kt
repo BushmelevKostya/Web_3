@@ -3,6 +3,7 @@ package app.web.database
 import jakarta.persistence.EntityManager
 import jakarta.persistence.EntityManagerFactory
 import jakarta.persistence.Persistence
+import org.hibernate.SessionFactory
 
 class HibernateUtil() {
     private var entityManagerFactory : EntityManagerFactory = Persistence.createEntityManagerFactory("PointData")

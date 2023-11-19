@@ -45,32 +45,25 @@
         </div>
 
         <div class="data-table" id="main-data-table">
-            <table border="1" class="data-table" id="data-table">
+            <h:dataTable value="${pointBean.points}" var="point" class="data-table" id="data-table">
                 <caption class="gradient-red">Таблица результатов запроса</caption>
-                <tr>
-                    <th class="gradient-black">id</th>
-                    <th class="gradient-black">x</th>
-                    <th class="gradient-black">y</th>
-                    <th class="gradient-black">R</th>
-                    <th class="gradient-black">Попадание</th>
-                </tr>
-                <tbody id="data-body" class="data-body">
-                <tr>
-                    <th>
-                    </th>
-                    <th>
-                    </th>
-                    <th>
-                    </th>
-                    <th>
-                    </th>
-                    <th class="green-response">
-                    </th>
-                    <th class="red-response">
-                    </th>
-                </tr>
-                </tbody>
-            </table>
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{point.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">x</f:facet>
+                    #{point.x}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">y</f:facet>
+                    #{point.y}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{point.r}
+                </h:column>
+            </h:dataTable>
         </div>
     </div>
 </h:body>
