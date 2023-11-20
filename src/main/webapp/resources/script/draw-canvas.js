@@ -5,7 +5,6 @@ function drawCanvas(R) {
     const canvas = document.getElementById("shedule");
     let context = canvas.getContext("2d");
 
-
     let R1 = R;
     let R2 = "R/2";
     let R3 = "-R/2";

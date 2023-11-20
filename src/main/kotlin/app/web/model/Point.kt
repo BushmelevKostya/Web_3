@@ -14,6 +14,7 @@ class Point : Serializable {
     private var listOfX = ArrayList<Int>()
     private var y : Float = 0.0f
     private var r : Int = 1
+    private val ps : PointService = PointService()
     init {
         listOfX.add(-4)
         listOfX.add(-3)
@@ -56,7 +57,6 @@ class Point : Serializable {
 
     fun submit() : ArrayList<PointEntity>{
         return try {
-            val ps = PointService()
             ps.saveEntity(x, y, r)
             ps.getPoints()
         } catch (exception : Exception) {
@@ -65,7 +65,16 @@ class Point : Serializable {
         }
     }
     fun getPoints() : ArrayList<PointEntity> {
-        val ps = PointService()
         return ps.getPoints()
+    }
+
+    fun getListX() : List<Int> {
+        return ps.getListX()
+    }
+    fun getListY() : List<Float>{
+        return ps.getListY()
+    }
+    fun getListR() : List<Int>{
+        return ps.getListR()
     }
 }

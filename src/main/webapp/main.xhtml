@@ -69,9 +69,19 @@
 </h:body>
 <input type="hidden" id="R-data"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<h:outputScript name="script/draw-dots.js"/>
 <h:outputScript name="script/draw-canvas.js"/>
-<h:outputScript name="script/send-form.js"/>
-<h:outputScript name="script/validate-form.js"/>
-<h:outputScript name="script/touch-shedule.js"/>
+<h:outputScript name="script/draw-dot.js"/>
+<h:outputScript name="script/draw-dots.js"/>
+<!--<h:outputScript name="script/send-form.js"/>-->
+<!--<h:outputScript name="script/validate-form.js"/>-->
+<!--<h:outputScript name="script/touch-shedule.js"/>-->
+<h:outputScript>
+    let listX = [];
+    let listY = [];
+    let listR = [];
+    listX = JSON.parse('${pointBean.getListX()}');
+    listY = JSON.parse('${pointBean.getListY()}');
+    listR = JSON.parse('${pointBean.getListR()}');
+    drawDots(listX, listY, listR)
+</h:outputScript>
 </html>

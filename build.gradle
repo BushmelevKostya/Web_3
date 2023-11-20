@@ -29,6 +29,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 dependencies {
+    implementation('com.google.code.gson:gson:2.10.1')
     // servlets
     implementation('jakarta.servlet:jakarta.servlet-api:6.0.0')
     implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
