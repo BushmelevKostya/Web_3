@@ -2,10 +2,9 @@ touchSchedule();
 
 function touchSchedule() {
     const canvas = document.getElementById("shedule");
-
     canvas.addEventListener('click', function (event) {
         let R = "R";
-        const RData = document.getElementById("R-data").innerText;
+        const RData = document.getElementById("form:r").innerText;
 
         if (RData !== "") R = RData;
         if (R === "R") {
@@ -14,7 +13,7 @@ function touchSchedule() {
             R = Number(R) / 2;
             const x = (((event.offsetX - 240) / 80) * R).toFixed(4);
             const y = ((-(event.offsetY - 250) / 80) * R).toFixed(4);
-            sendRequest(x, y, R * 2);
+            // sendRequest(x, y, R * 2);
         }
     });
 }
@@ -33,7 +32,6 @@ function sendRequest(x, y, R) {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // Здесь можно выполнить перенаправление после успешного выполнения запроса
             window.location.href = "result.jsp";
         }
     };

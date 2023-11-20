@@ -12,7 +12,7 @@
 
 <h:body>
     <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
-    <h:form>
+    <h:form id="form">
         <h:outputLabel value="Select X:"/>
         <h:selectOneMenu value="#{pointBean.x}">
             <f:selectItem itemLabel="Select One" itemValue=""/>
@@ -22,20 +22,33 @@
         <h:outputLabel value="Select Y:"/>
         <h:inputText value="#{pointBean.y}"/>
 
-        <h:commandLink action="#{pointBean.printR}">
-            <h:outputText value="1"></h:outputText>
-        </h:commandLink>
+        <div class="r-select">
+            <h:outputLabel for="r">select r</h:outputLabel> <br/>
+            <h:inputText type='hidden' value="#{pointBean.r}" name='r' id='r'/>
 
-        <h:commandButton value="Submit" action="#{pointBean.submit()}">
-            <f:ajax execute="@form"/>
+            <div id="r-links">
+                <h:commandLink value="1" id="rlink1">
+                    <f:ajax event="click" onevent="changeR(this, 1)"/>
+                </h:commandLink>
+                <h:commandLink value="2" id="rlink2">
+                    <f:ajax event="click" onevent="changeR(this, 2)"/>
+                </h:commandLink>
+                <h:commandLink value="3" id="rlink3">
+                    <f:ajax event="click" onevent="changeR(this, 3)"/>
+                </h:commandLink>
+                <h:commandLink value="4" id="rlink4">
+                    <f:ajax event="click" onevent="changeR(this, 4)"/>
+                </h:commandLink>
+                <h:commandLink value="5" id="rlink5">
+                    <f:ajax event="click" onevent="changeR(this, 5)"/>
+                </h:commandLink>
+            </div>
+        </div>
+
+        <h:commandButton type="submit" value="Submit" action="#{pointBean.submit()}">
+            <f:ajax execute="@form" render="data-table"/>
         </h:commandButton>
-    </h:form>
 
-    <div id="outputTable">
-
-    </div>
-
-    <h:form>
         <h:button value="Go to start page" outcome="go-index"/>
     </h:form>
 
@@ -45,7 +58,7 @@
         </div>
 
         <div class="data-table" id="main-data-table">
-            <h:dataTable value="${pointBean.points}" var="point" class="data-table" id="data-table">
+            <h:dataTable value="#{pointBean.points}" var="point" class="data-table" id="data-table">
                 <caption class="gradient-red">Таблица результатов запроса</caption>
                 <h:column>
                     <f:facet name="header">ID</f:facet>
@@ -72,9 +85,10 @@
 <h:outputScript name="script/draw-canvas.js"/>
 <h:outputScript name="script/draw-dot.js"/>
 <h:outputScript name="script/draw-dots.js"/>
+<h:outputScript name="script/change-r.js"/>
 <!--<h:outputScript name="script/send-form.js"/>-->
 <!--<h:outputScript name="script/validate-form.js"/>-->
-<!--<h:outputScript name="script/touch-shedule.js"/>-->
+<h:outputScript name="script/touch-shedule.js"/>
 <h:outputScript>
     let listX = [];
     let listY = [];

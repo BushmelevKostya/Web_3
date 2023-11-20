@@ -15,6 +15,7 @@ class Point : Serializable {
     private var y : Float = 0.0f
     private var r : Int = 1
     private val ps : PointService = PointService()
+    private var field : Int = 0;
     init {
         listOfX.add(-4)
         listOfX.add(-3)
@@ -44,6 +45,9 @@ class Point : Serializable {
     }
     fun setR(r : Int) {
         this.r = r
+    }
+    fun getField() : Int {
+        return field
     }
     fun getListOfX() : ArrayList<Int> {
         return listOfX
@@ -76,5 +80,9 @@ class Point : Serializable {
     }
     fun getListR() : List<Int>{
         return ps.getListR()
+    }
+
+    fun plusOne() {
+        field += 1
     }
 }
