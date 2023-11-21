@@ -1,4 +1,4 @@
-const input = document.getElementById('text');
+const input = document.getElementById('form:y');
 input.addEventListener('keyup', function (){
     const curVal = this.value;
     const regex = /^-?([0-9]+\.?[0-9]*)?$/;
@@ -9,7 +9,7 @@ input.addEventListener('keyup', function (){
         } else {
             this.value = "";
         }
-    } else if(this.value > 3 || this.value < -5) {
+    } else if(this.value > 3 || this.value < -3) {
         this.value = "";
     }
 });

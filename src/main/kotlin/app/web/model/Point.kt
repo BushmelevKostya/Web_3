@@ -17,6 +17,9 @@ class Point : Serializable {
     private val ps : PointService = PointService()
     private var field : Int = 0;
     init {
+        listOfX.add(-7)
+        listOfX.add(-6)
+        listOfX.add(-5)
         listOfX.add(-4)
         listOfX.add(-3)
         listOfX.add(-2)
@@ -26,6 +29,9 @@ class Point : Serializable {
         listOfX.add(2)
         listOfX.add(3)
         listOfX.add(4)
+        listOfX.add(5)
+        listOfX.add(6)
+        listOfX.add(7)
     }
 
     fun getX() : Int {
