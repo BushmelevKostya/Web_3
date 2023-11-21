@@ -24,12 +24,12 @@ function drawCanvas(R) {
 
     context.beginPath();
     context.moveTo(240, 250)
-    context.lineTo(160, 250);
-    context.lineTo(240, 410);
+    context.lineTo(320, 250);
+    context.lineTo(240, 330);
     context.fill();
 
     context.beginPath();
-    context.arc(240, 250, 160, 3* Math.PI/2, 2*Math.PI);
+    context.arc(240, 250, 80, 3* Math.PI/2, 2*Math.PI);
     context.lineTo(240, 250);
     context.fill();
 
