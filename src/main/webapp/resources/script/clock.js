@@ -16,10 +16,10 @@ window.addEventListener('load',function () {
   const getLastDigit = (x) => parseInt(x % 10);
   const getFirstFigit = (x) => parseInt(x / 10);
   setInterval(() => {
-    var today = new Date()
-    var hours = today.getHours()
-    var minutes = today.getMinutes()
-    var seconds = today.getSeconds()
+    var today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
 
     $(".second-second").css({
       'transform':'rotateY(90deg) rotate('+getLastDigit(seconds)*36+'deg)',
@@ -46,8 +46,8 @@ window.addEventListener('load',function () {
     });
 
     var year = today.getFullYear();
-    var month = today.getMonth()
-    var day = today.getDay()
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
     document.getElementsByClassName("year")[0].innerHTML = year.toString();
     document.getElementsByClassName("month")[0].innerHTML = Months[month];
     document.getElementsByClassName("day")[0].innerHTML = day.toString();

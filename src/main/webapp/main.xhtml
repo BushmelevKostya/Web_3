@@ -14,15 +14,15 @@
     <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
     <h:form id="form">
         <h:outputLabel value="Select X:"/>
-        <h:selectOneMenu id="x" value="#{pointBean.x}">
+        <h:selectOneMenu styleClass="select-menu" id="x" value="#{pointBean.x}">
             <f:selectItems value="#{pointBean.listOfX}"/>
         </h:selectOneMenu>
 
         <h:outputLabel value="Select Y:"/>
-        <h:inputText id="y" value="#{pointBean.y}"/>
+        <h:inputText styleClass="input-text" id="y" value="#{pointBean.y}"/>
 
         <div class="r-select">
-            <h:outputLabel for="r">select r</h:outputLabel> <br/>
+            <h:outputLabel for="r">select r</h:outputLabel>
             <h:inputText type='hidden' value="#{pointBean.r}" name='r' id='r'/>
 
             <div id="r-links">
@@ -44,11 +44,11 @@
             </div>
         </div>
 
-        <h:commandButton type="submit" id="submit-button" value="Submit" action="#{pointBean.submit()}">
+        <h:commandButton styleClass="submit-button" type="submit" id="submit-button" value="Submit" action="#{pointBean.submit()}">
             <f:ajax execute="@form" render="data-table" onevent="updatePage()"/>
         </h:commandButton>
 
-        <h:button value="Go to start page" outcome="go-index"/>
+        <h:button value="Go to start page" styleClass="input-button" outcome="go-index"/>
     </h:form>
 
     <div class="view">
@@ -58,7 +58,6 @@
 
         <div class="data-table" id="main-data-table">
             <h:dataTable value="#{pointBean.points}" var="point" class="data-table" id="data-table">
-                <caption class="gradient-red">Таблица результатов запроса</caption>
                 <h:column>
                     <f:facet name="header">ID</f:facet>
                     #{point.id}
