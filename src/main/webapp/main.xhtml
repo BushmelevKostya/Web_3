@@ -14,13 +14,13 @@
     <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
     <h:form id="form">
         <h:outputLabel value="Select X:"/>
-        <h:selectOneMenu value="#{pointBean.x}">
+        <h:selectOneMenu id="x" value="#{pointBean.x}">
             <f:selectItem itemLabel="Select One" itemValue=""/>
             <f:selectItems value="#{pointBean.listOfX}"/>
         </h:selectOneMenu>
 
         <h:outputLabel value="Select Y:"/>
-        <h:inputText value="#{pointBean.y}"/>
+        <h:inputText id="y" value="#{pointBean.y}"/>
 
         <div class="r-select">
             <h:outputLabel for="r">select r</h:outputLabel> <br/>
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <h:commandButton type="submit" value="Submit" action="#{pointBean.submit()}">
+        <h:commandButton type="submit" id="submit-button" value="Submit" action="#{pointBean.submit()}">
             <f:ajax execute="@form" render="data-table"/>
         </h:commandButton>
 
@@ -87,7 +87,7 @@
 <h:outputScript name="script/draw-dots.js"/>
 <h:outputScript name="script/change-r.js"/>
 <!--<h:outputScript name="script/validate-form.js"/>-->
-
+<h:outputScript name="script/touch-shedule.js"/>
 <h:outputScript>
     draw();
     function draw() {
