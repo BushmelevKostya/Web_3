@@ -45,7 +45,7 @@
         </div>
 
         <h:commandButton type="submit" id="submit-button" value="Submit" action="#{pointBean.submit()}">
-            <f:ajax execute="@form" render="data-table"/>
+            <f:ajax execute="@form" render="data-table" onevent="updatePage()"/>
         </h:commandButton>
 
         <h:button value="Go to start page" outcome="go-index"/>
@@ -75,6 +75,10 @@
                     <f:facet name="header">R</f:facet>
                     #{point.r}
                 </h:column>
+                <h:column>
+                    <f:facet name="header">Result</f:facet>
+                    #{point.result}
+                </h:column>
             </h:dataTable>
         </div>
     </div>
@@ -88,15 +92,24 @@
 <h:outputScript name="script/validate-form.js"/>
 <h:outputScript name="script/touch-shedule.js"/>
 <h:outputScript>
-    draw();
-    function draw() {
+draw();
+function draw() {
     let listX = [];
     let listY = [];
     let listR = [];
+    let listResult = [];
     listX = JSON.parse('${pointBean.getListX()}');
     listY = JSON.parse('${pointBean.getListY()}');
     listR = JSON.parse('${pointBean.getListR()}');
-    drawDots(listX, listY, listR)
-    }
+    listResult = JSON.parse('${pointBean.getListResult()}');
+    drawDots(listX, listY, listR, listResult)
+}
+
+function updatePage() {
+    window.location.reload();
+}
+// document.getElementById("form:submit-button").addEventListener("click", function (e) {
+//     draw();
+// });
 </h:outputScript>
 </html>

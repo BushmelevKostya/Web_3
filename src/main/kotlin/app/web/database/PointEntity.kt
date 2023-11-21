@@ -15,4 +15,6 @@ class PointEntity {
     var y: Float = 0.0f
     @Column(name = "r")
     var r: Int = 0
+    @Column(name = "result")
+    var result: String = ""
 }

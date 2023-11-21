@@ -2,21 +2,17 @@ package app.web.service
 
 import app.web.database.HibernateUtil
 import app.web.database.PointEntity
-import com.sun.faces.util.Json
-import jakarta.persistence.criteria.CriteriaBuilder
-import org.hibernate.Session
-import com.google.gson.Gson
-
 
 class PointService {
     private val hibernate = HibernateUtil()
     private var pointList = ArrayList<PointEntity>()
-    fun saveEntity(x: Int, y: Float, r: Int) {
+    fun saveEntity(x: Int, y: Float, r: Int, result: String) {
         val entityManager = hibernate.getEntityManager()
         val entity = PointEntity()
         entity.x = x
         entity.y = y
         entity.r = r
+        entity.result = result
 
         val transaction = entityManager.transaction
         transaction.begin()
@@ -64,7 +60,13 @@ class PointService {
         }
         return listR
     }
-
+    fun getListResult(): List<String> {
+        val listResult = mutableListOf<String>()
+        for (point in pointList) {
+            listResult.add(point.result)
+        }
+        return listResult
+    }
     fun findEntityById(entityId: Long): PointEntity? {
         val entityManager = hibernate.getEntityManager()
         return entityManager.find(PointEntity::class.java, entityId)
