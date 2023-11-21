@@ -12,50 +12,62 @@
 
 <h:body>
     <div class="header gradient-black">Bushmelev Kostya | Group P3218 | Variant 1102</div>
-    <h:form id="form">
-        <h:outputLabel value="Select X:"/>
-        <h:selectOneMenu styleClass="select-menu" id="x" value="#{pointBean.x}">
-            <f:selectItems value="#{pointBean.listOfX}"/>
-        </h:selectOneMenu>
+    <div class="left-panel">
+        <h:form id="form">
+            <div class="selects">
+                <div class="x-select">
+                    <h:outputLabel value="Select X: "/>
+                    <h:selectOneMenu styleClass="select-menu" id="x" value="#{pointBean.x}">
+                        <f:selectItems value="#{pointBean.listOfX}"/>
+                    </h:selectOneMenu>
+                </div>
+                <div class="y-select">
+                    <h:outputLabel value="Select Y: "/>
+                    <h:inputText styleClass="input-text" id="y" value="#{pointBean.y}"/>
+                </div>
+                <div class="r-select">
+                    <h:outputLabel for="r">Select R: </h:outputLabel>
+                    <h:inputText type='hidden' value="#{pointBean.r}" name='r' id='r'/>
 
-        <h:outputLabel value="Select Y:"/>
-        <h:inputText styleClass="input-text" id="y" value="#{pointBean.y}"/>
+                    <div id="r-links">
+                        <h:commandLink value="1" id="rlink1">
+                            <f:ajax event="click" onevent="changeR(this, 1)"/>
+                        </h:commandLink>
+                        <h:commandLink value="2" id="rlink2">
+                            <f:ajax event="click" onevent="changeR(this, 2)"/>
+                        </h:commandLink>
+                        <h:commandLink value="3" id="rlink3">
+                            <f:ajax event="click" onevent="changeR(this, 3)"/>
+                        </h:commandLink>
+                        <h:commandLink value="4" id="rlink4">
+                            <f:ajax event="click" onevent="changeR(this, 4)"/>
+                        </h:commandLink>
+                        <h:commandLink value="5" id="rlink5">
+                            <f:ajax event="click" onevent="changeR(this, 5)"/>
+                        </h:commandLink>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="submit-button-block">
+                    <h:commandButton styleClass="submit-button" type="submit" id="submit-button" value="Submit"
+                                     action="#{pointBean.submit()}">
+                        <f:ajax execute="@form" render="data-table" onevent="updatePage()"/>
+                    </h:commandButton>
+                </div>
+                <div class="link-button-block">
+                    <h:button value="Go to start page" styleClass="input-button" outcome="go-index"/>
+                </div>
+            </div>
+        </h:form>
 
-        <div class="r-select">
-            <h:outputLabel for="r">select r</h:outputLabel>
-            <h:inputText type='hidden' value="#{pointBean.r}" name='r' id='r'/>
-
-            <div id="r-links">
-                <h:commandLink value="1" id="rlink1">
-                    <f:ajax event="click" onevent="changeR(this, 1)"/>
-                </h:commandLink>
-                <h:commandLink value="2" id="rlink2">
-                    <f:ajax event="click" onevent="changeR(this, 2)"/>
-                </h:commandLink>
-                <h:commandLink value="3" id="rlink3">
-                    <f:ajax event="click" onevent="changeR(this, 3)"/>
-                </h:commandLink>
-                <h:commandLink value="4" id="rlink4">
-                    <f:ajax event="click" onevent="changeR(this, 4)"/>
-                </h:commandLink>
-                <h:commandLink value="5" id="rlink5">
-                    <f:ajax event="click" onevent="changeR(this, 5)"/>
-                </h:commandLink>
+        <div class="view">
+            <div class="canvas">
+                <canvas id="shedule" class="shedule" width="500" height="500"></canvas>
             </div>
         </div>
-
-        <h:commandButton styleClass="submit-button" type="submit" id="submit-button" value="Submit" action="#{pointBean.submit()}">
-            <f:ajax execute="@form" render="data-table" onevent="updatePage()"/>
-        </h:commandButton>
-
-        <h:button value="Go to start page" styleClass="input-button" outcome="go-index"/>
-    </h:form>
-
-    <div class="view">
-        <div class="canvas">
-            <canvas id="shedule" class="shedule" width="500" height="500"></canvas>
-        </div>
-
+    </div>
+    <div class="right-panel">
         <div class="data-table" id="main-data-table">
             <h:dataTable value="#{pointBean.points}" var="point" class="data-table" id="data-table">
                 <h:column>
@@ -91,8 +103,8 @@
 <h:outputScript name="script/validate-form.js"/>
 <h:outputScript name="script/touch-shedule.js"/>
 <h:outputScript>
-draw();
-function draw() {
+    draw();
+    function draw() {
     let listX = [];
     let listY = [];
     let listR = [];
@@ -102,13 +114,13 @@ function draw() {
     listR = JSON.parse('${pointBean.getListR()}');
     listResult = JSON.parse('${pointBean.getListResult()}');
     drawDots(listX, listY, listR, listResult)
-}
+    }
 
-function updatePage() {
+    function updatePage() {
     window.location.reload();
-}
-// document.getElementById("form:submit-button").addEventListener("click", function (e) {
-//     draw();
-// });
+    }
+    // document.getElementById("form:submit-button").addEventListener("click", function (e) {
+    // draw();
+    // });
 </h:outputScript>
 </html>

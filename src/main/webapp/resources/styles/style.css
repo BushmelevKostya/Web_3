@@ -175,12 +175,6 @@ h1 + p {
   padding-top: 10px;
 }
 
-.submit-button-block {
-  display: block;
-  text-align: center;
-  padding-top: 10px;
-}
-
 .canvas {
   display: inline-block;
   border: 6px solid #ffc288;
@@ -240,11 +234,11 @@ h1 + p {
   opacity: 0.8;
   border: 3px solid #0f0;
   border-radius: 5px;
-  height: 40px;
-  width: 100px;
+  height: 20px;
+  width: 50px;
   background-color: #1ccfc9;
   font-family: distroy, sans-serif;
-  font-size: 30px;
+  font-size: 15px;
   color: black;
   text-align: center;
 }
@@ -504,4 +498,41 @@ a:hover::before {
   font-family: sans-serif;
   font-size: 1rem;
   padding: 2px 5px;
+}
+
+.left-panel {
+  width: 50%;
+  display:inline-block;
+  float: left;
+}
+
+.right-panel {
+  width: 50%;
+  display: inline-block;
+}
+
+.x-select {
+  width: 20%;
+  display:inline-flex;
+  /*float: left;*/
+}
+.y-select {
+  width: 30%;
+  display:inline-flex;
+  /*float: left;*/
+}
+.r-select {
+  width: auto;
+  display:inline-flex;
+}
+
+td {
+  text-align: center;
+}
+.buttons {
+  text-align: center;
+}
+.submit-button-block, .link-button-block {
+  display: inline-flex;
+  text-align: center;
 }
