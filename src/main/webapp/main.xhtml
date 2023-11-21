@@ -86,10 +86,11 @@
 <h:outputScript name="script/draw-dot.js"/>
 <h:outputScript name="script/draw-dots.js"/>
 <h:outputScript name="script/change-r.js"/>
-<!--<h:outputScript name="script/send-form.js"/>-->
 <!--<h:outputScript name="script/validate-form.js"/>-->
-<h:outputScript name="script/touch-shedule.js"/>
+
 <h:outputScript>
+    draw();
+    function draw() {
     let listX = [];
     let listY = [];
     let listR = [];
@@ -97,5 +98,6 @@
     listY = JSON.parse('${pointBean.getListY()}');
     listR = JSON.parse('${pointBean.getListR()}');
     drawDots(listX, listY, listR)
+    }
 </h:outputScript>
 </html>

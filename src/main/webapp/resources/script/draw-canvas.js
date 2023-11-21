@@ -1,7 +1,6 @@
 drawCanvas("R");
 
 function drawCanvas(R) {
-    console.log(R)
     const canvas = document.getElementById("shedule");
     let context = canvas.getContext("2d");
 

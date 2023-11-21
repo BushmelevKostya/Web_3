@@ -3,9 +3,9 @@ package app.web.model
 import app.web.database.PointEntity
 import app.web.service.PointService
 import jakarta.enterprise.context.ApplicationScoped
+import jakarta.faces.context.FacesContext
 import jakarta.inject.Named
 import java.io.Serializable
-import java.lang.Exception
 
 @Named("pointBean")
 @ApplicationScoped
@@ -81,7 +81,6 @@ class Point : Serializable {
     fun getListR() : List<Int>{
         return ps.getListR()
     }
-
     fun plusOne() {
         field += 1
     }

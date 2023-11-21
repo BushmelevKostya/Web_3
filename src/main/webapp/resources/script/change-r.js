@@ -5,5 +5,6 @@ function changeR(rlink, value) {
         links[i].classList.remove('r-checked');
     }
     rlink.classList.add('r-checked');
-    drawCanvas(value)
+    drawCanvas(value);
+    draw();
 }
