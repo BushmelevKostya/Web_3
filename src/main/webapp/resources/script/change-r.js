@@ -6,5 +6,5 @@ function changeR(rlink, value) {
     }
     rlink.classList.add('r-checked');
     drawCanvas(value);
-    draw();
+    drawR(1);
 }
