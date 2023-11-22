@@ -1,49 +1,82 @@
 drawCanvas(5);
 
 function drawCanvas(R) {
+
     const canvas = document.getElementById("shedule");
     let context = canvas.getContext("2d");
 
-    let R1 = R;
-    let R2 = "R/2";
-    let R3 = "-R/2";
-    let R4 = "-R";
-    if (R !== "R") {
-        R2 = String(R / 2);
-        R3 = String(-R / 2);
-        R4 = String(-R);
-    }
-
+    let R1 = "5";
+    let R2 = "2.5";
+    let R3 = "-2.5";
+    let R4 = "-5";
+    // if (R !== "R") {
+    //     R2 = String(R / 2);
+    //     R3 = String(-R / 2);
+    //     R4 = String(-R);
+    // }
+    const center = 250;
+    const rightEdge = 500;
+    const leftEdge = 0;
+    const bottomEdge = 500;
+    const topEdge = 0;
+    const l = 32;
     context.fillStyle = "#EEE"
 
     context.fillRect(0, 0, 500, 500);
 
     context.fillStyle = "#0048ff"
 
-    context.fillRect(80, 90, 160, 160);
+    context.fillRect(center - R * l, center - R * l, R * l, R * l);
 
     context.beginPath();
-    context.moveTo(240, 250)
-    context.lineTo(320, 250);
-    context.lineTo(240, 330);
+    context.moveTo(center, center);
+    context.lineTo(center + R / 2 * l, center);
+    context.lineTo(center, center + R / 2 * l);
+    context.closePath();
     context.fill();
 
     context.beginPath();
-    context.arc(240, 250, 80, 3* Math.PI/2, 2*Math.PI);
-    context.lineTo(240, 250);
+    context.moveTo(center + R / 2 * l, center);
+    context.arc(center, center, R / 2 * l, 0, 3 * Math.PI / 2, true);
+    context.lineTo(center, center);
+    context.closePath();
     context.fill();
 
+    // context.globalAlpha = 1;
+    // context.font = '10px monospace'
+    //
+    // context.fillText('-R', center - R * l, center);
+    // context.fillText('R', center, center - R * l);
+    // context.fillText('-R/2', center - R * l / 2, center);
+    // context.fillText('R/2', center, center - R * l / 2);
+    // context.fillText('R/2', center + R * l / 2, center);
+    // context.fillText('R', center + R * l, center);
+    // context.fillText('-R/2', center, center + R * l / 2);
+    // context.fillText('-R', center, center + R * l);
+
+    // context.fillRect(80, 90, 160, 160);
+    //
+    // context.beginPath();
+    // context.moveTo(240, 250)
+    // context.lineTo(320, 250);
+    // context.lineTo(240, 330);
+    // context.fill();
+    //
+    // context.beginPath();
+    // context.arc(240, 250, 80, 3* Math.PI/2, 2*Math.PI);
+    // context.lineTo(240, 250);
+    // context.fill();
+    //
     context.lineWidth = 2.0;
     context.beginPath();
-    context.moveTo(240, 10);
-    context.lineTo(240, 500);
-    context.lineTo(240, 250);
+    context.moveTo(250, 10);
+    context.lineTo(250, 500);
+    context.lineTo(250, 250);
     context.lineTo(490, 250);
     context.lineTo(0, 250);
     context.stroke();
 
 
-    // Цвет для рисования
     context.fillStyle = "#000";
     context.font = 'bold 13px Arial';
     context.fillText("Y", 250, 10);
@@ -54,16 +87,16 @@ function drawCanvas(R) {
     
     for(let i = 1; i <= 5; i++) {
         context.beginPath();
-        context.moveTo(250, 10 + i * 80);
-        context.lineTo(230, 10 + i * 80);
+        context.moveTo(260, 10 + i * 80);
+        context.lineTo(240, 10 + i * 80);
         context.stroke();
     }
     context.fillStyle = '#000';
     context.beginPath();
-    context.moveTo(240, 0);
-    context.lineTo(235, 10);
+    context.moveTo(250, 0);
     context.lineTo(245, 10);
-    context.lineTo(240, 0);
+    context.lineTo(255, 10);
+    context.lineTo(250, 0);
     context.stroke();
 
     context.fillText("X", 490, 270);
@@ -73,8 +106,8 @@ function drawCanvas(R) {
     context.fillText(R4, 72, 270);
     for(let i = 1; i <= 5; i++) {
         context.beginPath();
-        context.moveTo(80 * i, 260);
-        context.lineTo(80 * i, 240);
+        context.moveTo(80 * i + 10, 260);
+        context.lineTo(80 * i + 10, 240);
         context.stroke();
     }
     context.fillStyle = '#000';
