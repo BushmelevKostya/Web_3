@@ -134,7 +134,7 @@
         let listY = [y];
         let listR = [r];
         let listResult = [];
-        let hit = (y >= x - r / 2) ||  (((r/2) * (r/2) - x * x)) >= y || (x >= -r &amp; r >= y);
+        let hit = (y >= x - r / 2 &amp; x >=0 &amp; 0 >= y) ||  sqrt(((r/2) * (r/2) - x * x)) >= y &amp; x >=0 &amp; y >= 0 || (x >= -r &amp; r >= y &amp; 0 >= x &amp; y >= 0);
         if (hit) listResult = ["Yes"]
         else listResult = ["No"]
         drawDots(listX, listY, listR, listResult);
