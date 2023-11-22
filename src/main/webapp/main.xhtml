@@ -30,21 +30,31 @@
                     <h:inputText type='hidden' value="#{pointBean.r}" name='r' id='r'/>
 
                     <div id="r-links">
-                        <h:commandLink value="1" id="rlink1">
-                            <f:ajax event="click" onevent="changeR(this, 1)"/>
-                        </h:commandLink>
-                        <h:commandLink value="2" id="rlink2">
-                            <f:ajax event="click" onevent="changeR(this, 2)"/>
-                        </h:commandLink>
-                        <h:commandLink value="3" id="rlink3">
-                            <f:ajax event="click" onevent="changeR(this, 3)"/>
-                        </h:commandLink>
-                        <h:commandLink value="4" id="rlink4">
-                            <f:ajax event="click" onevent="changeR(this, 4)"/>
-                        </h:commandLink>
-                        <h:commandLink value="5" id="rlink5">
-                            <f:ajax event="click" onevent="changeR(this, 5)"/>
-                        </h:commandLink>
+                        <div class="r-link">
+                            <h:commandLink value="1" id="rlink1">
+                                <f:ajax event="click" onevent="changeR(this, 1)"/>
+                            </h:commandLink>
+                        </div>
+                        <div class="r-link">
+                            <h:commandLink value="2" id="rlink2">
+                                <f:ajax event="click" onevent="changeR(this, 2)"/>
+                            </h:commandLink>
+                        </div>
+                        <div class="r-link">
+                            <h:commandLink value="3" id="rlink3">
+                                <f:ajax event="click" onevent="changeR(this, 3)"/>
+                            </h:commandLink>
+                        </div>
+                        <div class="r-link">
+                            <h:commandLink value="4" id="rlink4">
+                                <f:ajax event="click" onevent="changeR(this, 4)"/>
+                            </h:commandLink>
+                        </div>
+                        <div class="r-link">
+                            <h:commandLink value="5" id="rlink5">
+                                <f:ajax event="click" onevent="changeR(this, 5)"/>
+                            </h:commandLink>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,7 +62,7 @@
                 <div class="submit-button-block">
                     <h:commandButton styleClass="submit-button" type="submit" id="submit-button" value="Submit"
                                      action="#{pointBean.submit()}">
-                        <f:ajax execute="@form" render="data-table" onevent="updatePage()"/>
+                        <f:ajax execute="@form" render="data-table" onevent="addDot()"/>
                     </h:commandButton>
                 </div>
                 <div class="link-button-block">
@@ -116,11 +126,18 @@
     drawDots(listX, listY, listR, listResult)
     }
 
-    function updatePage() {
-    window.location.reload();
+    function addDot() {
+        let x = document.getElementById('form:x').value;
+        let y = document.getElementById('form:y').value;
+        let r = document.getElementById('form:r').value;
+        let listX = [x];
+        let listY = [y];
+        let listR = [r];
+        let listResult = [];
+        let hit = (y >= x - r / 2) ||  (((r/2) * (r/2) - x * x)) >= y || (x >= -r &amp; r >= y);
+        if (hit) listResult = ["Yes"]
+        else listResult = ["No"]
+        drawDots(listX, listY, listR, listResult);
     }
-    // document.getElementById("form:submit-button").addEventListener("click", function (e) {
-    // draw();
-    // });
 </h:outputScript>
 </html>

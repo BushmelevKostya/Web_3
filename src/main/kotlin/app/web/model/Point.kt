@@ -7,16 +7,17 @@ import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
 import java.io.Serializable
 import java.lang.Math.pow
+import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 @Named("pointBean")
 @ApplicationScoped
 class Point : Serializable {
-    private var x : Int = 0
+    private var x : Int = 1
     private var listOfX = ArrayList<Int>()
-    private var y : Float = 0.0f
-    private var r : Int = 1
+    private var y : Float = 1.0f
+    private var r : Int = 5
     private var result : String = ""
     private val ps : PointService = PointService()
     private var field : Int = 0;
@@ -76,6 +77,8 @@ class Point : Serializable {
     }
 
     fun submit() : ArrayList<PointEntity>{
+        x = min(x.toDouble(), r * 1.5).toInt()
+        y = min(y, (r * 1.5).toFloat())
         val res = checkScope(x, y, r)
         return try {
             ps.saveEntity(x, y, r, res)

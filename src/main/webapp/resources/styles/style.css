@@ -536,3 +536,8 @@ td {
   display: inline-flex;
   text-align: center;
 }
+
+.r-link {
+  margin-left: 2px;
+  display: inline-block;
+}

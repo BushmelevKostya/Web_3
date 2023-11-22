@@ -1,4 +1,4 @@
-drawCanvas("R");
+drawCanvas(5);
 
 function drawCanvas(R) {
     const canvas = document.getElementById("shedule");
